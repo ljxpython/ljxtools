@@ -70,18 +70,18 @@ jobs:
         run: >-
           ls -l
 
-      - name: create github release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-#          body: ${{ steps.changelog_reader.outputs.changes }}
-#          body_path: dist
-          files: dist/*.whl
-          draft: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: create github release
+#        id: create_release
+#        uses: softprops/action-gh-release@v1
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        with:
+##          body: ${{ steps.changelog_reader.outputs.changes }}
+##          body_path: dist
+#          files: dist/*.whl
+#          draft: false
+#          prerelease: false
+#          token: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: publish to PyPI
