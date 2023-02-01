@@ -76,10 +76,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          body: ${{ steps.changelog_reader.outputs.changes }}
+#          body: ${{ steps.changelog_reader.outputs.changes }}
+#          body_path: dist
           files: dist/*.whl
           draft: false
           prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: publish to PyPI
