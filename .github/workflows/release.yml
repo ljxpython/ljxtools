@@ -80,8 +80,7 @@ jobs:
           files: dist/*.whl
           draft: false
           prerelease: false
-          permissions:
-            contents: write
+
 
       - name: publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
