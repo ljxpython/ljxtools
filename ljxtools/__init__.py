@@ -2,4 +2,4 @@
 
 __author__ = """ljxPython"""
 __email__ = '1030470148@qq.com'
-__version__ = '0.3.4'
+__version__ = '0.3.5'
