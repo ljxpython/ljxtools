@@ -4,6 +4,14 @@
 
 * test case in future
 
+## 0.3.8 (2023-02-01)
+
+* test some future for work
+
+## 0.3.7 (2023-02-01)
+
+* test some future for work
+
 ## 0.3.6 (2023-02-01)
 
 * test some future for work

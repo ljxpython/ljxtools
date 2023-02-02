@@ -70,6 +70,15 @@ jobs:
         run: >-
           ls -l
 
+      - name: distribute to pipy set configuration
+        run: |
+          poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
+
+      - name: distribute to pipy
+        run: >-
+          poetry build
+
+
 #      - name: create github release
 #        id: create_release
 #        uses: softprops/action-gh-release@v1
@@ -84,9 +93,9 @@ jobs:
 #          token: ${{ secrets.GITHUB_TOKEN }}
 
 
-      - name: publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
-          skip_existing: true
+#      - name: publish to PyPI
+#        uses: pypa/gh-action-pypi-publish@release/v1
+#        with:
+#          user: __token__
+#          password: ${{ secrets.PYPI_API_TOKEN }}
+#          skip_existing: true
