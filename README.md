@@ -16,6 +16,21 @@ always use tools package
 * PyPI: <https://pypi.org/project/ljxtools/>
 * Free software: MIT
 
+## How To USe
+
+```
+## test
+
+from ljxtools.utils.date_operation import DatetimeSlove
+
+if __name__ == '__main__':
+    d = DatetimeSlove()
+    time_now = d.str_now()
+    print(time_now)
+```
+
+
+
 
 ## Features
 
