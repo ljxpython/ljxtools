@@ -72,6 +72,8 @@ jobs:
 
       - name: distribute to pipy set configuration
         run: |
+          echo ${{ secrets.PYPI_API_TOKEN }}
+          echo poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
           poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
 
       - name: distribute to pipy
