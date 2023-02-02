@@ -34,7 +34,8 @@ if __name__ == '__main__':
 
 ## Features
 
-* TODO
+* fileopration
+* dateopration
 
 ## Credits
 
