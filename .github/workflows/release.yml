@@ -9,6 +9,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -70,34 +73,34 @@ jobs:
         run: >-
           ls -l
 
-      - name: distribute to pipy set configuration
-        run: |
-          echo ${{ secrets.PYPI_API_TOKEN }}
-          echo poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
-          poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
-
-      - name: distribute to pipy
-        run: >-
-          poetry build
-
-
-#      - name: create github release
-#        id: create_release
-#        uses: softprops/action-gh-release@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-##          body: ${{ steps.changelog_reader.outputs.changes }}
-##          body_path: dist
-#          files: dist/*.whl
-#          draft: false
-#          prerelease: false
-#          token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: distribute to pipy set configuration
+#        run: |
+#          echo ${{ secrets.PYPI_API_TOKEN }}
+#          echo poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
+#          poetry config pypi-token.pypi ${{ secrets.PYPI_API_TOKEN }}
+#
+#      - name: distribute to pipy
+#        run: >-
+#          poetry build
 
 
-#      - name: publish to PyPI
-#        uses: pypa/gh-action-pypi-publish@release/v1
-#        with:
-#          user: __token__
-#          password: ${{ secrets.PYPI_API_TOKEN }}
-#          skip_existing: true
+      - name: create github release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+#          body: ${{ steps.changelog_reader.outputs.changes }}
+#          body_path: dist
+          files: dist/*.whl
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: publish to PyPI
+        uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          skip_existing: true
