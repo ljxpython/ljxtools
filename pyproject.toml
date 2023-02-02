@@ -1,7 +1,7 @@
 [tool]
 [tool.poetry]
 name = "ljxtools"
-version = "0.3.11"
+version = "0.3.12"
 homepage = "https://github.com/ljxPython/ljxtools"
 description = "always use tools package."
 authors = ["ljxpython <1030470148@qq.com>"]
