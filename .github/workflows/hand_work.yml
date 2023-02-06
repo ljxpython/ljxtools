@@ -41,6 +41,7 @@ jobs:
           ENVIRONMENT: ${{ inputs.environment }}
 
   test_job_env:
+    runs-on: ubuntu-latest
     name: test by @${{ github.actor }}
     steps:
       - name: git respo
