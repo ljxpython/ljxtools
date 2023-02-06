@@ -48,6 +48,11 @@ jobs:
         id: git_resp
         run: |
           echo ${{ github.repository }}
+      - uses: actions/checkout@v2
+      - name: step_env
+        id: step_env
+        run: |
+          echo ${{ steps.git_resp }}
 
 #  env_test:
 ##    strategy:
