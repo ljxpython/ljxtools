@@ -45,7 +45,7 @@ jobs:
       matrix:
         python-versions:
           - 3.7
-          - 3.10
+          - 3.10.9
         os:
           - ubuntu-18.04
           - macos-latest
