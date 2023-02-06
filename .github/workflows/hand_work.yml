@@ -40,30 +40,38 @@ jobs:
           TAGS: ${{ inputs.tags }}
           ENVIRONMENT: ${{ inputs.environment }}
 
-  env_test:
+  test_job_env:
+    name: test by @${{ github.actor }}
+    steps:
+      - name: git respo
+        id: git_resp
+        run: |
+          echo ${{ github.repository }}
+
+#  env_test:
+##    strategy:
+##      matrix:
+##        python-versions:
+##          - 3.7
+##          - 3.10.9
+##        os:
+##          - ubuntu-18.04
+##          - macos-latest
+##    runs-on: ${{ matrix.os }}
+#    runs-on: ubuntu-20.04
 #    strategy:
 #      matrix:
-#        python-versions:
-#          - 3.7
-#          - 3.10.9
-#        os:
-#          - ubuntu-18.04
-#          - macos-latest
-#    runs-on: ${{ matrix.os }}
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        python-versions: [ 3.10.9 ]
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-versions }}
-
-      - name: list files
-        run: ls -l .
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install poetry
+#        python-versions: [ 3.10.9 ]
+#    steps:
+#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+#      - uses: actions/checkout@v2
+#      - uses: actions/setup-python@v2
+#        with:
+#          python-version: ${{ matrix.python-versions }}
+#
+#      - name: list files
+#        run: ls -l .
+#      - name: Install dependencies
+#        run: |
+#          python -m pip install --upgrade pip
+#          pip install poetry
