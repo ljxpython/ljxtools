@@ -2,6 +2,11 @@
 
 name: debug workflow
 on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ dev_actions ]
+  pull_request:
+    branches: [ dev_actions ]
   workflow_dispatch:
     inputs:
       logLevel:
