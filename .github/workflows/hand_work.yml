@@ -52,7 +52,7 @@ jobs:
       - name: step_env
         id: step_env
         run: |
-          echo ${{ steps.git_resp }}
+          echo ${{ steps.git_resp.outputs }}
 
 #  env_test:
 ##    strategy:
